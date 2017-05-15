@@ -1,0 +1,26 @@
+Redux
+
+ActionType: SEARCH, SEARCH_SUCCESS, SEARCH_FAILURE 추가
+src/actions/search.js 파일 생성하여 thunk, action creators ? searchRequest, search, searchSuccess, searchFailure 추가 및 구현
+src/reducers/search.js 파일 생성하여 리듀서 구현
+src/reducers/index.js 인덱스 리듀서에서 search 리듀서 추가
+이 리듀서의 initialState 는 아래에 있습니다.. search 요청을하고 그 값을 $set 을 통하여 그대로 usernames 로 설정하세요.
+에러가 났을 경우엔 usernames 를 빈 배열로 설정.
+
+const initialState = {
+    status: 'INIT',
+    usernames: []
+};
+1
+2
+3
+4
+const initialState = {
+    status: 'INIT',
+    usernames: []
+};
+
+src/containers/App.js searchRequest, state.search.usernames 매핑 및 handleSearch 메소드 구현
+그리고 handleSearch 메소드와 searchStatus 를 Header 컴포넌트로 전달 (onSearch, usernames)
+src/components/Header.js 전달받은 onSearch 와 searchStatus 를 Search 컴포넌트로 전달 (onSearch, usernames)
+src/components/Search.js 전달받은 onSearch 와 usernames 를 사용하여 Search 컴포넌트 완성 (handleSearch 구현)
